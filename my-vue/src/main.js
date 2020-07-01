@@ -10,6 +10,15 @@ import 'element-ui/lib/theme-chalk/index.css';
 // Vue.prototype.$axios=Axios
 // Axios.defaults.baseURL='http://localhost:8080/api/'
 
+//设置全局的路由守卫
+router.beforeEach((to,from,next)=>{
+  if(sessionStorage.getItem('token')){
+    next()
+  }else{
+    next('/login')
+  }
+})
+
 Vue.config.productionTip = false
 Vue.use(ElementUI);
 //axios
@@ -26,7 +35,7 @@ Vue.filter('relativeTime',function (date) {
 })
 //注册全局的导航栏组件
 import Navbar from './components/common/Navbar'
-Vue.component(Navbar.name,Navbar);
+Vue.component('Navbar',Navbar);
 new Vue({
   el: '#app',
   router,

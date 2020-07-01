@@ -1,6 +1,7 @@
 import Vue from 'vue'
 
 import Vuex from 'vuex'
+import users from './store/user/users'
 Vue.use(Vuex)
 export default new Vuex.Store({
   state:{
@@ -20,6 +21,9 @@ export default new Vuex.Store({
     changeToken({commit},num){
       commit('changeToken',num)
     }
+  },
+  modules:{
+    user:users
   }
   //五
   // modules:{
