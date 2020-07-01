@@ -11,13 +11,13 @@ import 'element-ui/lib/theme-chalk/index.css';
 // Axios.defaults.baseURL='http://localhost:8080/api/'
 
 //设置全局的路由守卫
-router.beforeEach((to,from,next)=>{
-  if(sessionStorage.getItem('token')){
-    next()
-  }else{
-    next('/login')
-  }
-})
+// router.beforeEach((to,from,next)=>{
+//   if(sessionStorage.getItem('token')){
+//     next()
+//   }else{
+//     next('/login')
+//   }
+// })
 
 Vue.config.productionTip = false
 Vue.use(ElementUI);
